@@ -6,19 +6,23 @@
     <title>Bagus Utomo Mentoring | Partner Bisnis Anda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000; color: #fff; }
+        /* Base Card Style */
         .bento-card { background: #0A0A0A; border: 1px solid #1A1A1A; border-radius: 32px; overflow: hidden; height: 100%; transition: all 0.4s ease; }
         .bento-card:hover { border-color: #10B981; transform: translateY(-4px); }
+        /* Gradients & Effects */
         .emerald-gradient { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
         .text-emerald { color: #10B981; }
         .text-glow { text-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+        /* Overlay untuk teks di atas gambar agar terbaca */
+        .bg-overlay-gradient { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%); }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full z-[100] bg-black/60 backdrop-blur-2xl border-b border-white/5">
+    <nav class="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-2xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-9 h-9 emerald-gradient rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.3)]">
@@ -49,9 +53,10 @@
                 Dengarkan Cerita Saya <i data-lucide="chevron-down" class="w-5 h-5"></i>
             </a>
         </div>
-        <div class="relative group">
-            <div class="bento-card aspect-[4/5] border-emerald-500/20">
-                <img src="baguskecil.png" alt="Bagus Utomo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+        <div class="relative group h-[600px]">
+            <div class="bento-card h-full border-emerald-500/20 relative rounded-[40px]">
+                <img src="baguskecil.png" alt="Bagus Utomo" class="w-full h-full object-cover object-[center_20%] transition duration-700 scale-105 group-hover:scale-100">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-[40px]"></div>
             </div>
         </div>
     </section>
@@ -59,11 +64,11 @@
     <section id="cerita" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div class="bento-card md:col-span-2 relative min-h-[400px]">
-                <img src="lulussd.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-1000">
-                <div class="relative p-12 h-full flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent">
-                    <h3 class="text-3xl font-black uppercase mb-4 tracking-tighter">Hanya Anak Lulusan SD</h3>
-                    <p class="text-zinc-200 text-lg leading-relaxed max-w-xl">
+            <div class="bento-card md:col-span-2 relative min-h-[500px] group">
+                <img src="lulussd.jpg" class="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition duration-1000">
+                <div class="relative p-12 h-full flex flex-col justify-end bg-overlay-gradient">
+                    <h3 class="text-4xl font-black uppercase mb-4 tracking-tighter text-white">Hanya Anak Lulusan SD</h3>
+                    <p class="text-zinc-200 text-lg leading-relaxed max-w-xl font-medium">
                         Saya hanyalah anak lulusan SD. Tidak punya apa-apa. Tidak punya siapa-siapa. Bahkan untuk bermimpi pun, hidup saya dulu terasa terlalu berat.
                     </p>
                 </div>
@@ -72,115 +77,123 @@
             <div class="bento-card p-10 flex flex-col justify-between bg-zinc-950">
                 <i data-lucide="x-circle" class="text-emerald w-12 h-12"></i>
                 <div>
-                    <h4 class="text-xl font-black uppercase mb-4 tracking-tighter leading-tight">Tidak Bisa Lanjut Sekolah</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed">
+                    <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter leading-tight">Tidak Bisa Lanjut Sekolah</h4>
+                    <p class="text-zinc-400 text-base leading-relaxed font-medium">
                         Setelah lulus SD, hidup langsung berubah. Saya tidak bisa lanjut sekolah. Bukan karena tidak mau, tapi karena tidak mampu.
                     </p>
                 </div>
             </div>
 
             <div class="bento-card p-10 emerald-gradient text-black flex flex-col justify-center">
-                <p class="text-2xl font-black italic tracking-tighter leading-none mb-4 uppercase">
+                <p class="text-3xl font-black italic tracking-tighter leading-none mb-6 uppercase">
                     "Hidup tidak peduli kita siap atau tidak."
                 </p>
-                <p class="text-black/60 font-bold text-xs uppercase tracking-widest leading-none">Pelajaran Berharga #01</p>
+                <p class="text-black/70 font-bold text-sm uppercase tracking-widest leading-none">Pelajaran Berharga #01</p>
             </div>
 
-            <div class="bento-card md:col-span-2 relative min-h-[350px]">
-                <img src="berkebun.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40">
-                <div class="relative p-12 h-full flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
-                    <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter">Kerja Serabutan</h4>
-                    <p class="text-zinc-300 italic text-lg leading-relaxed">
+            <div class="bento-card md:col-span-2 relative min-h-[400px] group">
+                <img src="berkebun.jpg" class="absolute inset-0 w-full h-full object-cover object-[center_30%] opacity-70 group-hover:scale-105 transition duration-1000">
+                <div class="relative p-12 h-full flex flex-col justify-end bg-overlay-gradient">
+                    <h4 class="text-3xl font-black uppercase mb-4 tracking-tighter text-white">Kerja Serabutan</h4>
+                    <p class="text-zinc-200 italic text-xl leading-relaxed font-medium">
                         "Membersihkan kebun orang. Mengandalkan tenaga. Pulang capek. Besok ulang lagi. Seperti tidak ada jalan keluar."
                     </p>
                 </div>
             </div>
 
             <div class="bento-card md:col-span-2 p-12 grid md:grid-cols-2 gap-10 items-center bg-zinc-950">
-                <div class="space-y-4">
-                    <h4 class="text-4xl font-black uppercase tracking-tighter leading-[0.8]">Jauh dari Nyaman</h4>
-                    <p class="text-zinc-500 text-xs font-bold uppercase tracking-widest">Tidak ada listrik. Tidak ada aspal. Tidak ada jaringan.</p>
+                <div class="space-y-6">
+                    <h4 class="text-5xl font-black uppercase tracking-tighter leading-[0.8]">Jauh dari Nyaman</h4>
+                    <div class="space-y-3">
+                         <p class="text-emerald font-bold uppercase tracking-widest flex items-center gap-3"><i data-lucide="zap-off" class="w-5 h-5"></i> Tidak ada listrik.</p>
+                         <p class="text-emerald font-bold uppercase tracking-widest flex items-center gap-3"><i data-lucide="road" class="w-5 h-5"></i> Tidak ada aspal.</p>
+                         <p class="text-emerald font-bold uppercase tracking-widest flex items-center gap-3"><i data-lucide="wifi-off" class="w-5 h-5"></i> Tidak ada jaringan.</p>
+                    </div>
                 </div>
-                <div class="h-56 rounded-3xl overflow-hidden border border-white/5">
-                    <img src="b612bagus.jpg" class="w-full h-full object-cover grayscale opacity-60">
+                <div class="h-64 rounded-[32px] overflow-hidden border-2 border-white/10 relative">
+                    <img src="b612bagus.jpg" class="w-full h-full object-cover opacity-80">
+                    <div class="absolute inset-0 bg-black/40"></div>
                 </div>
             </div>
 
-            <div class="bento-card p-10 flex flex-col justify-center border-emerald-500/20">
-                <div class="p-8 bg-emerald-500/5 rounded-3xl border border-emerald-500/20 text-center">
-                    <i data-lucide="quote" class="text-emerald w-8 h-8 mx-auto mb-4 opacity-30"></i>
-                    <p class="text-emerald font-black italic text-xl leading-tight uppercase tracking-tight">
+            <div class="bento-card p-10 flex flex-col justify-center border-emerald-500/30 bg-zinc-900">
+                <div class="p-8 bg-emerald-500/10 rounded-[32px] border border-emerald-500/20 text-center relative">
+                    <i data-lucide="quote" class="text-emerald w-10 h-10 mx-auto mb-6 opacity-40 absolute top-4 left-4"></i>
+                    <p class="text-emerald font-black italic text-2xl leading-tight uppercase tracking-tight py-4 relative z-10">
                         “SAYA INGIN HIDUP BERUBAH.”
                     </p>
                 </div>
             </div>
 
-            <div class="bento-card md:col-span-3 p-12 bg-zinc-900/50">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-8">
+            <div class="bento-card md:col-span-3 p-12 bg-zinc-900">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-10">
                         <div class="space-y-4">
-                            <h4 class="text-4xl font-black uppercase tracking-tighter mb-2 italic">Usaha Warung 24 Jam</h4>
-                            <p class="text-zinc-400 text-lg leading-relaxed">
+                            <h4 class="text-4xl font-black uppercase tracking-tighter mb-4 italic text-emerald">Usaha Warung 24 Jam</h4>
+                            <p class="text-zinc-300 text-xl leading-relaxed font-medium">
                                 Saya coba usaha kecil-kecilan. Warung buka 24 jam. Kerja keras tanpa libur. Tapi hasilnya? Masih begitu-begitu saja.
                             </p>
                         </div>
-                        <div class="p-8 bg-black rounded-[2.5rem] border-l-4 border-emerald-500">
-                            <p class="text-emerald font-black text-2xl italic tracking-tight leading-tight uppercase mb-2">
+                        <div class="p-10 bg-[#050505] rounded-[3rem] border-l-8 border-emerald-500 shadow-2xl shadow-emerald-900/20">
+                            <p class="text-emerald font-black text-3xl italic tracking-tight leading-tight uppercase mb-4">
                                 "MENANGIS DALAM DIAM"
                             </p>
-                            <p class="text-zinc-500 font-bold text-sm leading-relaxed">
-                                Karena saya sadar: bukan saya yang kurang usaha, tapi saya yang tidak tahu caranya.
+                            <p class="text-white font-bold text-lg leading-relaxed">
+                                Karena saya sadar: bukan saya yang kurang usaha, tapi saya yang tidak tahu CARANYA.
                             </p>
                         </div>
                     </div>
-                    <div class="h-[450px] rounded-[3rem] overflow-hidden group">
-                        <img src="unnamed(3).jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700">
+                    <div class="h-[500px] rounded-[3rem] overflow-hidden group relative border-2 border-white/5">
+                        <img src="unnamed(3).jpg" class="w-full h-full object-cover object-top scale-105 group-hover:scale-100 transition duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="bento-card p-10 flex flex-col justify-between">
-                <i data-lucide="refresh-cw" class="text-emerald w-12 h-12"></i>
+            <div class="bento-card p-12 flex flex-col justify-between bg-zinc-950 border-emerald-500/20">
+                <i data-lucide="refresh-cw" class="text-emerald w-14 h-14"></i>
                 <div>
-                    <h4 class="text-2xl font-black uppercase tracking-tighter mb-4">Belajar Sendiri</h4>
-                    <p class="text-zinc-500 text-sm leading-relaxed mb-4">Jatuh. Bangun. Salah. Ulangi.</p>
-                    <p class="text-white font-black italic uppercase tracking-widest text-xs">"Semua saya bayar dengan waktu dan luka."</p>
+                    <h4 class="text-3xl font-black uppercase tracking-tighter mb-6">Belajar Sendiri</h4>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-6 font-bold">Jatuh. Bangun. Salah. Ulangi.</p>
+                    <p class="text-white font-black italic uppercase tracking-widest text-sm leading-relaxed bg-emerald-500/10 p-4 rounded-xl border border-emerald-500/20">"Semua saya bayar dengan waktu dan luka."</p>
                 </div>
             </div>
 
-            <div class="bento-card md:col-span-2 relative min-h-[400px] group">
-                <img src="mobilpenuhpaket.jpg" class="absolute inset-0 w-full h-full object-cover opacity-50 transition duration-700 group-hover:scale-105">
-                <div class="relative p-12 h-full flex flex-col justify-end bg-gradient-to-t from-black via-black/40 to-transparent">
-                    <h4 class="text-3xl font-black uppercase mb-4 tracking-tighter">Hidup Mulai Berubah</h4>
-                    <p class="text-zinc-200 text-lg leading-relaxed max-w-xl mb-6">
+            <div class="bento-card md:col-span-2 relative min-h-[450px] group">
+                <img src="brosur sb30.jpg" class="absolute inset-0 w-full h-full object-cover object-center opacity-80 transition duration-700 group-hover:scale-105">
+                <div class="relative p-12 h-full flex flex-col justify-end bg-overlay-gradient">
+                    <h4 class="text-4xl font-black uppercase mb-6 tracking-tighter text-white">Hidup Mulai Berubah</h4>
+                    <p class="text-zinc-100 text-xl leading-relaxed max-w-2xl mb-8 font-medium">
                         Orderan masuk. Kepercayaan diri tumbuh. Saya mulai paham arah. Bukan karena saya pintar, tapi karena saya tidak berhenti melangkah.
                     </p>
                 </div>
             </div>
 
-            <div class="bento-card md:col-span-3 p-12 bg-emerald-600 text-black">
-                <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="bento-card md:col-span-3 p-12 bg-emerald-600 text-black relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+                <div class="flex flex-col md:flex-row gap-16 items-center relative z-10">
                     <div class="md:w-2/3">
-                        <h4 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.8] mb-8 italic">Bisnis Saya Tumbuh</h4>
-                        <p class="text-black font-extrabold text-xl leading-relaxed italic mb-8">
+                        <h4 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8 italic text-white">Bisnis Saya Tumbuh</h4>
+                        <p class="text-black font-extrabold text-2xl leading-relaxed italic mb-10">
                             "Ada sistem. Ada alur. Ada harapan. Dan di titik ini, saya terdiam cukup lama… Karena saya sadar: banyak orang seperti saya dulu, berjuang sendirian."
                         </p>
                     </div>
-                    <div class="md:w-1/3 aspect-square rounded-[2rem] overflow-hidden grayscale brightness-75 border-2 border-black/20">
-                        <img src="brosur sb30.jpg" class="w-full h-full object-cover">
+                    <div class="md:w-1/3 aspect-[4/5] rounded-[3rem] overflow-hidden border-4 border-black/20 shadow-2xl">
+                        <img src="nateshmall.jpg" class="w-full h-full object-cover object-top">
                     </div>
                 </div>
             </div>
 
-            <div class="bento-card md:col-span-3 p-12 flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <h4 class="text-4xl font-black uppercase tracking-tighter mb-4">Menjadi Nyata</h4>
-                    <p class="text-zinc-500 text-xl font-medium italic leading-relaxed">
+            <div class="bento-card md:col-span-3 p-12 flex flex-col md:flex-row gap-16 items-center bg-[#080808]">
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <h4 class="text-4xl font-black uppercase tracking-tighter mb-6 text-emerald">Mimpi Menjadi Nyata</h4>
+                    <p class="text-zinc-300 text-2xl font-bold italic leading-relaxed">
                         "Hal-hal yang dulu terasa mustahil, pelan-pelan jadi nyata. Bukan hidup mewah. Tapi hidup yang lebih tenang. Lebih terarah. Lebih bermakna."
                     </p>
                 </div>
-                <div class="md:w-1/2 rounded-[3rem] overflow-hidden grayscale opacity-40 border border-white/5">
-                    <img src="baguskecil.png" class="w-full h-full object-contain p-8">
+                <div class="md:w-1/2 h-[400px] rounded-[3rem] overflow-hidden border-2 border-white/5 order-1 md:order-2 bg-emerald-900/20 flex items-end justify-center relative">
+                    <img src="mobilpenuhpaket.jpg" class="w-auto h-[90%] object-contain relative z-10 drop-shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
                 </div>
             </div>
         </div>
@@ -190,119 +203,215 @@
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <div>
                 <h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8] mb-12 italic">INI ALASAN <br> <span class="text-emerald-600">SAYA.</span></h2>
-                <p class="text-gray-500 text-2xl font-bold uppercase tracking-tight mb-12 italic leading-none">SAYA MEMBUKA MENTORING 3 BULAN</p>
-                <p class="text-xl font-medium leading-relaxed mb-12">Saya tidak sedang jual mimpi. Saya hanya ingin:</p>
+                <p class="text-gray-500 text-3xl font-black uppercase tracking-tight mb-12 italic leading-none">SAYA MEMBUKA MENTORING 3 BULAN</p>
+                <p class="text-2xl font-bold leading-relaxed mb-12">Saya tidak sedang jual mimpi. Saya hanya ingin:</p>
                 <div class="space-y-8">
-                    <div class="flex items-center gap-5">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white"><i data-lucide="check" class="w-5 h-5"></i></div>
-                        <span class="text-xl font-extrabold uppercase tracking-tight">Kamu tidak mengulang luka yang sama</span>
+                    <div class="flex items-center gap-6 p-6 bg-zinc-50 rounded-3xl border border-zinc-200">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-200"><i data-lucide="check" class="w-7 h-7"></i></div>
+                        <span class="text-xl font-black uppercase tracking-tight">Kamu tidak mengulang luka yang sama</span>
                     </div>
-                    <div class="flex items-center gap-5">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white"><i data-lucide="check" class="w-5 h-5"></i></div>
-                        <span class="text-xl font-extrabold uppercase tracking-tight">Kamu tidak jalan sendirian</span>
+                    <div class="flex items-center gap-6 p-6 bg-zinc-50 rounded-3xl border border-zinc-200">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-200"><i data-lucide="check" class="w-7 h-7"></i></div>
+                        <span class="text-xl font-black uppercase tracking-tight">Kamu tidak jalan sendirian</span>
                     </div>
-                    <div class="flex items-center gap-5">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white"><i data-lucide="check" class="w-5 h-5"></i></div>
-                        <span class="text-xl font-extrabold uppercase tracking-tight">Kamu punya tempat bertanya dan bersandar</span>
+                    <div class="flex items-center gap-6 p-6 bg-zinc-50 rounded-3xl border border-zinc-200">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-200"><i data-lucide="check" class="w-7 h-7"></i></div>
+                        <span class="text-xl font-black uppercase tracking-tight">Punya tempat bertanya dan bersandar</span>
                     </div>
                 </div>
             </div>
-            <div class="bento-card border-zinc-200">
-                <img src="sukses.jpg" class="w-full h-full object-cover grayscale opacity-80">
+            <div class="bento-card border-zinc-200 h-[700px] relative group">
+                <img src="sukses.jpg" class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 bg-zinc-950">
-        <div class="max-w-4xl mx-auto text-center mb-24">
-            <h3 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 italic leading-none text-white">SAYA TIDAK MENGAJARI <br> DARI <span class="text-emerald text-glow">ATAS</span></h3>
-            <p class="text-zinc-600 text-xl font-bold uppercase tracking-widest italic leading-none">"SAYA MENEMANI DARI SAMPING"</p>
+    <section class="py-32 px-6 bg-[#050505]">
+        <div class="max-w-5xl mx-auto text-center mb-24">
+            <h3 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 italic leading-[0.9] text-white">SAYA TIDAK MENGAJARI <br> DARI <span class="text-emerald text-glow">ATAS</span></h3>
+            <p class="text-zinc-500 text-2xl font-black uppercase tracking-widest italic leading-none">"SAYA MENEMANI DARI SAMPING"</p>
         </div>
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bento-card p-10 hover:bg-emerald-500 group transition duration-500 text-center">
-                <i data-lucide="alert-triangle" class="text-emerald group-hover:text-black w-10 h-10 mb-8 mx-auto"></i>
-                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none">Pengalaman Gagal</p>
+            <div class="bento-card p-12 hover:bg-emerald-600 group transition duration-500 text-center border-emerald-500/20 bg-zinc-900">
+                <i data-lucide="alert-triangle" class="text-emerald group-hover:text-black w-14 h-14 mb-8 mx-auto transition"></i>
+                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none transition">Pengalaman Gagal</p>
             </div>
-            <div class="bento-card p-10 hover:bg-emerald-500 group transition duration-500 text-center text-glow">
-                <i data-lucide="dollar-sign" class="text-emerald group-hover:text-black w-10 h-10 mb-8 mx-auto"></i>
-                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none">Kesalahan Mahal</p>
+            <div class="bento-card p-12 hover:bg-emerald-600 group transition duration-500 text-center border-emerald-500/20 bg-zinc-900">
+                <i data-lucide="dollar-sign" class="text-emerald group-hover:text-black w-14 h-14 mb-8 mx-auto transition"></i>
+                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none transition">Kesalahan Mahal</p>
             </div>
-            <div class="bento-card p-10 hover:bg-emerald-500 group transition duration-500 text-center">
-                <i data-lucide="shield" class="text-emerald group-hover:text-black w-10 h-10 mb-8 mx-auto"></i>
-                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none">Jalan Lebih Aman</p>
+            <div class="bento-card p-12 hover:bg-emerald-600 group transition duration-500 text-center border-emerald-500/20 bg-zinc-900">
+                <i data-lucide="shield" class="text-emerald group-hover:text-black w-14 h-14 mb-8 mx-auto transition"></i>
+                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none transition">Jalan Lebih Aman</p>
             </div>
-            <div class="bento-card p-10 hover:bg-emerald-500 group transition duration-500 text-center">
-                <i data-lucide="help-circle" class="text-emerald group-hover:text-black w-10 h-10 mb-8 mx-auto"></i>
-                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none">Arah Saat Bingung</p>
+            <div class="bento-card p-12 hover:bg-emerald-600 group transition duration-500 text-center border-emerald-500/20 bg-zinc-900">
+                <i data-lucide="help-circle" class="text-emerald group-hover:text-black w-14 h-14 mb-8 mx-auto transition"></i>
+                <p class="text-white group-hover:text-black font-black uppercase tracking-tighter text-2xl italic leading-none transition">Arah Saat Bingung</p>
             </div>
         </div>
-        <div class="max-w-3xl mx-auto text-center mt-20 px-6">
-            <p class="text-zinc-500 text-xl font-medium leading-relaxed italic">
+        <div class="max-w-3xl mx-auto text-center mt-24 px-6">
+            <p class="text-emerald font-black text-3xl leading-relaxed italic uppercase tracking-tight">
                 "Bukan teori. Bukan sok pintar. Tapi pengalaman nyata dari bawah."
             </p>
         </div>
     </section>
 
     <section class="py-32 px-6">
-        <div class="max-w-7xl mx-auto bg-zinc-900 rounded-[4rem] p-12 md:p-24 relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px]"></div>
-            <h4 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-16 italic leading-none">Mentoring ini untuk kamu jika:</h4>
-            <div class="grid md:grid-cols-2 gap-x-20 gap-y-12 mb-24">
-                <div class="flex gap-6 items-start">
-                    <i data-lucide="user-minus" class="text-emerald w-10 h-10 flex-shrink-0"></i>
-                    <p class="text-2xl font-bold uppercase tracking-tight leading-none italic">Kamu sudah capek berjuang sendiri</p>
+        <div class="max-w-7xl mx-auto bg-zinc-900 rounded-[5rem] p-12 md:p-24 relative overflow-hidden border border-white/5">
+            <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px]"></div>
+            
+            <h4 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-20 italic leading-none relative z-10 text-center md:text-left">Mentoring ini untuk kamu jika:</h4>
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-12 mb-28 relative z-10">
+                <div class="flex gap-8 items-center p-8 bg-black/50 rounded-[3rem] border border-white/5">
+                    <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="user-x" class="text-emerald w-8 h-8"></i>
+                    </div>
+                    <p class="text-2xl font-black uppercase tracking-tight leading-none italic">Kamu sudah capek berjuang sendiri</p>
                 </div>
-                <div class="flex gap-6 items-start">
-                    <i data-lucide="compass" class="text-emerald w-10 h-10 flex-shrink-0"></i>
-                    <p class="text-2xl font-bold uppercase tracking-tight leading-none italic">Kamu usaha tapi sering bingung arah</p>
+                <div class="flex gap-8 items-center p-8 bg-black/50 rounded-[3rem] border border-white/5">
+                    <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="compass" class="text-emerald w-8 h-8"></i>
+                    </div>
+                    <p class="text-2xl font-black uppercase tracking-tight leading-none italic">Kamu usaha tapi sering bingung arah</p>
                 </div>
-                <div class="flex gap-6 items-start">
-                    <i data-lucide="shield-check" class="text-emerald w-10 h-10 flex-shrink-0"></i>
-                    <p class="text-2xl font-bold uppercase tracking-tight leading-none italic">Kamu mau belajar tapi tidak mau dihakimi</p>
+                <div class="flex gap-8 items-center p-8 bg-black/50 rounded-[3rem] border border-white/5">
+                    <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="shield-check" class="text-emerald w-8 h-8"></i>
+                    </div>
+                    <p class="text-2xl font-black uppercase tracking-tight leading-none italic">Kamu mau belajar tapi tidak mau dihakimi</p>
                 </div>
-                <div class="flex gap-6 items-start">
-                    <i data-lucide="heart" class="text-emerald w-10 h-10 flex-shrink-0"></i>
-                    <p class="text-2xl font-bold uppercase tracking-tight leading-none italic">Kamu ingin ditemani, bukan digurui</p>
+                <div class="flex gap-8 items-center p-8 bg-black/50 rounded-[3rem] border border-white/5">
+                    <div class="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="heart-handshake" class="text-emerald w-8 h-8"></i>
+                    </div>
+                    <p class="text-2xl font-black uppercase tracking-tight leading-none italic">Kamu ingin ditemani, bukan digurui</p>
                 </div>
             </div>
             
-            <div class="bento-card p-12 md:p-16 border-emerald-500/20 bg-zinc-950 text-center">
-                <p class="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em] mb-12">KOMITMEN SAYA KE KAMU</p>
-                <p class="text-2xl md:text-5xl font-black mb-10 leading-tight uppercase italic text-glow">
+            <div class="bento-card p-12 md:p-24 border-emerald-500/30 bg-[#050505] text-center relative z-10 shadow-2xl shadow-emerald-900/10">
+                <i data-lucide="quote" class="text-emerald w-16 h-16 mx-auto mb-10 opacity-30"></i>
+                <p class="text-zinc-500 text-sm font-black uppercase tracking-[0.6em] mb-12">KOMITMEN SAYA KE KAMU</p>
+                <p class="text-3xl md:text-6xl font-black mb-10 leading-[1.1] uppercase italic text-glow text-emerald">
                     "SAYA TIDAK MENJANJIKAN CEPAT KAYA. SAYA TIDAK MENJUAL MIMPI KOSONG. SAYA HANYA MENJANJIKAN SATU HAL: SELAMA 1 TAHUN, KAMU TIDAK AKAN BERJALAN SENDIRIAN."
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="daftar" class="py-32 px-6 bg-black text-center relative">
-        <div class="max-w-5xl mx-auto">
-            <div class="mb-16">
-                <p class="text-xl font-extrabold uppercase italic tracking-tighter mb-6 text-emerald">JIKA KAMU MERASA</p>
-                <h2 class="text-6xl md:text-[9rem] font-black uppercase tracking-tighter italic leading-[0.8] mb-12 underline decoration-emerald-500/30">“INI CERITA HIDUP GUE”</h2>
-                <p class="text-zinc-500 text-2xl font-medium">Maka mungkin, mentoring ini memang untuk kamu.</p>
+    <section class="py-32 px-6 bg-black">
+        <div class="max-w-7xl mx-auto mb-16 text-center">
+             <h2 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic text-white mb-4">INSPIRASI <span class="text-emerald">HARIAN</span></h2>
+             <p class="text-zinc-500 text-xl font-bold tracking-widest uppercase">Update Terbaru & Cerita Pendek</p>
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bento-card aspect-[9/16] relative group cursor-pointer bg-zinc-900 border-emerald-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                <img src="b612bagus.jpg" class="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition duration-500">
+                <div class="absolute bottom-0 left-0 p-8 z-20">
+                    <i data-lucide="play-circle" class="text-white w-12 h-12 mb-4 opacity-80 group-hover:text-emerald group-hover:scale-110 transition"></i>
+                    <h4 class="text-white font-bold leading-tight mb-2 line-clamp-2">Cara Memulai Bisnis Tanpa Modal Besar di 2026</h4>
+                    <p class="text-emerald text-xs font-bold uppercase tracking-widest">5 Menit Tonton</p>
+                </div>
+            </div>
+             <div class="bento-card aspect-[9/16] relative group cursor-pointer bg-zinc-900 border-emerald-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                 <img src="mobilpenuhpaket.jpg" class="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition duration-500">
+                <div class="absolute bottom-0 left-0 p-8 z-20">
+                    <i data-lucide="play-circle" class="text-white w-12 h-12 mb-4 opacity-80 group-hover:text-emerald group-hover:scale-110 transition"></i>
+                    <h4 class="text-white font-bold leading-tight mb-2 line-clamp-2">Mentalitas "Orang Bawah" yang Justru Bikin Sukses</h4>
+                    <p class="text-emerald text-xs font-bold uppercase tracking-widest">3 Menit Tonton</p>
+                </div>
+            </div>
+             <div class="bento-card aspect-[9/16] relative group cursor-pointer bg-zinc-900 border-emerald-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                 <img src="nateshmall.jpg" class="w-full h-full object-cover object-top opacity-60 group-hover:opacity-80 transition duration-500">
+                <div class="absolute bottom-0 left-0 p-8 z-20">
+                    <i data-lucide="file-text" class="text-white w-12 h-12 mb-4 opacity-80 group-hover:text-emerald group-hover:scale-110 transition"></i>
+                    <h4 class="text-white font-bold leading-tight mb-2 line-clamp-2">Bacaan: 5 Kesalahan Fatal Saat Baru Buka Usaha</h4>
+                    <p class="text-emerald text-xs font-bold uppercase tracking-widest">Artikel Singkat</p>
+                </div>
+            </div>
+             <div class="bento-card aspect-[9/16] relative group cursor-pointer bg-zinc-900 border-emerald-500/10">
+                 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                 <img src="mobilpenuhpaket.jpg" class="w-full h-full object-cover object-center opacity-60 group-hover:opacity-80 transition duration-500">
+                <div class="absolute bottom-0 left-0 p-8 z-20">
+                    <i data-lucide="play-circle" class="text-white w-12 h-12 mb-4 opacity-80 group-hover:text-emerald group-hover:scale-110 transition"></i>
+                    <h4 class="text-white font-bold leading-tight mb-2 line-clamp-2">Q&A: "Pak, Saya Bingung Mulai Dari Mana?"</h4>
+                    <p class="text-emerald text-xs font-bold uppercase tracking-widest">10 Menit Tonton</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="daftar" class="py-40 px-6 bg-[#050505] text-center relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-emerald-500/5 rounded-full blur-[200px] pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="mb-24">
+                <p class="text-2xl font-black uppercase italic tracking-widest mb-8 text-emerald">JIKA KAMU MERASA</p>
+                <h2 class="text-7xl md:text-[10rem] font-black uppercase tracking-tighter italic leading-[0.8] mb-16 text-white relative inline-block">
+                    <span class="relative z-10">“INI CERITA HIDUP GUE”</span>
+                    <div class="absolute bottom-4 left-0 w-full h-8 bg-emerald-500/40 -skew-x-12 -z-10"></div>
+                </h2>
+                <p class="text-zinc-400 text-3xl font-black uppercase tracking-tight">Maka mungkin, mentoring ini memang untuk kamu.</p>
             </div>
             
-            <a href="https://wa.me/6282256123667?text=Halo%20saya%20mau%20daftar%20mentoring%203%20bulan%20intensif" 
-               class="inline-block px-14 py-8 emerald-gradient text-black font-black text-3xl rounded-[2rem] hover:scale-105 transition shadow-[0_20px_60px_rgba(16,185,129,0.3)] uppercase italic tracking-tighter">
-                DAFTAR MENTORING SEKARANG
-            </a>
+            <div class="inline-block p-2 bg-emerald-500/20 rounded-[3rem] backdrop-blur-xl">
+                <a href="https://wa.me/6282256123667?text=Halo%20saya%20mau%20daftar%20mentoring%203%20bulan%20intensif" 
+                   class="block px-16 py-10 emerald-gradient text-[#050505] font-black text-3xl md:text-5xl rounded-[2.5rem] hover:scale-105 transition shadow-[0_0_80px_rgba(16,185,129,0.4)] uppercase italic tracking-tighter relative overflow-hidden group">
+                    <span class="relative z-10 flex items-center gap-6 justify-center">
+                        DAFTAR MENTORING SEKARANG <i data-lucide="arrow-up-right" class="w-12 h-12 group-hover:translate-x-2 group-hover:-translate-y-2 transition"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[200%] transition duration-1000"></div>
+                </a>
+            </div>
             
-            <p class="mt-12 text-zinc-600 text-sm font-bold italic leading-relaxed max-w-lg mx-auto">
+            <p class="mt-16 text-zinc-500 text-sm font-bold italic leading-relaxed max-w-lg mx-auto tracking-widest uppercase">
                 (Saya membuka terbatas, karena saya ingin benar-benar hadir, bukan sekadar menerima)
             </p>
         </div>
     </section>
 
-    <footer class="py-24 border-t border-white/5 bg-black text-center">
-        <div class="flex items-center justify-center gap-3 mb-10">
-            <div class="w-7 h-7 emerald-gradient rounded-lg flex items-center justify-center text-black">
-                <i data-lucide="leaf" class="w-4 h-4"></i>
-            </div>
-            <span class="font-black tracking-tighter uppercase italic text-zinc-400">BAGUS UTOMO MENTOR</span>
+    <section class="py-24 px-6 bg-[#0A0A0A] border-t border-white/5">
+        <div class="max-w-7xl mx-auto text-center">
+             <h2 class="text-4xl font-black uppercase tracking-tighter italic text-white mb-12">Let's <span class="text-emerald">Connect</span></h2>
+             <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                 <a href="#" class="group flex flex-col items-center gap-4">
+                     <div class="w-20 h-20 bento-card bg-zinc-900 flex items-center justify-center group-hover:bg-[#000000] group-hover:border-[#FE2C55] transition-all duration-300">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 group-hover:text-[#FE2C55] transition"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                     </div>
+                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs group-hover:text-white transition">TikTok</span>
+                 </a>
+                 <a href="#" class="group flex flex-col items-center gap-4">
+                     <div class="w-20 h-20 bento-card bg-zinc-900 flex items-center justify-center group-hover:bg-[radial-gradient(circle_at_30%_107%,#fdf497_0%,#fdf497_5%,#fd5949_45%,#d6249f_60%,#285AEB_90%)] group-hover:border-transparent transition-all duration-300">
+                         <i data-lucide="instagram" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                     </div>
+                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs group-hover:text-white transition">Instagram</span>
+                 </a>
+                  <a href="https://wa.me/6282256123667" class="group flex flex-col items-center gap-4">
+                     <div class="w-20 h-20 bento-card bg-zinc-900 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-300">
+                         <i data-lucide="message-circle" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                     </div>
+                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs group-hover:text-white transition">WhatsApp</span>
+                 </a>
+                  <a href="mailto:emailanda@contoh.com" class="group flex flex-col items-center gap-4">
+                     <div class="w-20 h-20 bento-card bg-zinc-900 flex items-center justify-center group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all duration-300">
+                         <i data-lucide="mail" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                     </div>
+                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs group-hover:text-white transition">Email</span>
+                 </a>
+             </div>
         </div>
-        <p class="text-zinc-800 font-black text-[10px] uppercase tracking-[0.8em]">
-            &copy; 2026 BAGUS UTOMO | POWERED BY XANDER SYSTEMS
+    </section>
+
+    <footer class="py-24 bg-black text-center">
+        <div class="flex items-center justify-center gap-3 mb-10">
+            <div class="w-8 h-8 emerald-gradient rounded-xl flex items-center justify-center text-black shadow-lg shadow-emerald-900/20">
+                <i data-lucide="leaf" class="w-5 h-5"></i>
+            </div>
+            <span class="font-black tracking-tighter uppercase italic text-zinc-400 text-xl">BAGUS UTOMO MENTOR</span>
+        </div>
+        <p class="text-zinc-700 font-black text-[10px] uppercase tracking-[0.8em]">
+            &copy; 2026 ALL RIGHTS RESERVED | PARTNER SUKSES ANDA
         </p>
     </footer>
 
