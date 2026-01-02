@@ -68,6 +68,7 @@ export default function Home() {
             <Image 
               src="/baguskecil.png" 
               alt="Bagus Utomo" 
+              priority
               fill
               className="object-cover object-[center_20%] transition duration-700 scale-105 group-hover:scale-100"
             />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script"; // Masalah 1: Tambahkan import ini
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({ 
@@ -8,7 +9,6 @@ const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
 });
 
-// --- UPDATE BAGIAN INI ---
 export const metadata: Metadata = {
   title: "Bagus Utomo Mentoring | Partner Perjalanan Bisnis Anda",
   description: "Bukan sekadar teori. Temani perjalanan bisnis Anda dari titik paling bawah bersama Bagus Utomo. Mentoring intensif 3 bulan untuk hasil nyata.",
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bagus Utomo Mentoring - Saya Pernah di Titik Paling Bawah",
     description: "Selama 1 tahun, kamu tidak akan berjalan sendirian dalam membangun bisnis.",
-    url: "https://bagus-utomo-web.vercel.app", // Nanti ganti jika sudah punya domain custom
+    url: "https://bagus-utomo-web.vercel.app",
     siteName: "Bagus Utomo Mentoring",
     images: [
       {
-        url: "/sukses.jpg", // Gambar ini yang akan muncul saat link di-share di WA/IG
+        url: "/sukses.jpg",
         width: 1200,
         height: 630,
         alt: "Bagus Utomo Mentoring",
@@ -37,10 +37,9 @@ export const metadata: Metadata = {
     images: ["/sukses.jpg"],
   },
   icons: {
-    icon: "/favicon.ico", // Pastikan ada file favicon di folder public
+    icon: "/icon.png",
   },
 };
-// --------------------------
 
 export default function RootLayout({
   children,
@@ -49,7 +48,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className="scroll-smooth">
+      {/* Masalah 2: Tag <head> manual dihapus, Script dipindah ke dalam body */}
       <body className={`${jakarta.variable} font-sans antialiased bg-black text-white overflow-x-hidden`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
+        
         {children}
       </body>
     </html>
