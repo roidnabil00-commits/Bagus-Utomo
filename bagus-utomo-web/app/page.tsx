@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="h-[300px] md:h-[500px] rounded-[3rem] overflow-hidden group relative border-2 border-white/5 mt-6 md:mt-0">
-                <Image src="/unnamed3.jpg" alt="Warung" fill className="object-cover object-top scale-105 group-hover:scale-100 transition duration-1000" />
+                <Image src="/warung.jpg" alt="Warung" fill className="object-cover object-top scale-105 group-hover:scale-100 transition duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
             </div>
