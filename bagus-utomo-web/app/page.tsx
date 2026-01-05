@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="h-[300px] md:h-[500px] rounded-[3rem] overflow-hidden group relative border-2 border-white/5 mt-6 md:mt-0">
-                <Image src="/unnamed(3).jpg" alt="Warung" fill className="object-cover object-top scale-105 group-hover:scale-100 transition duration-1000" />
+                <Image src="/unnamed3.jpg" alt="Warung" fill className="object-cover object-top scale-105 group-hover:scale-100 transition duration-1000" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function Home() {
           </div>
 
           <div className="bg-[#0A0A0A] border border-[#1A1A1A] md:col-span-2 relative min-h-[350px] md:min-h-[450px] group rounded-[32px] overflow-hidden">
-            <Image src="/brosur sb30.jpg" alt="Brosur" fill className="object-cover object-center opacity-80 transition duration-700 group-hover:scale-105" />
+            <Image src="/brosursb30.jpg" alt="Brosur" fill className="object-cover object-center opacity-80 transition duration-700 group-hover:scale-105" />
             <div className="relative p-8 md:p-12 h-full flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/50 to-transparent">
               <h4 className="text-3xl md:text-4xl font-black uppercase mb-6 tracking-tighter text-white">Hidup Mulai Berubah</h4>
               <p className="text-zinc-100 text-lg md:text-xl leading-relaxed max-w-2xl mb-8 font-medium">
@@ -212,7 +212,7 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full md:w-1/2 h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden border-2 border-white/5 order-1 md:order-2 bg-emerald-900/20 flex items-end justify-center relative">
-              <Image src="mobilpenuhpaket.jpg" alt="Sukses" width={400} height={500} className="w-auto h-[90%] object-contain relative z-10 drop-shadow-2xl" />
+              <Image src="/mobilpenuhpaket.jpg" alt="Sukses" width={400} height={500} className="w-auto h-[90%] object-contain relative z-10 drop-shadow-2xl" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
             </div>
           </div>
