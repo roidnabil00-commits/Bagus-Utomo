@@ -212,7 +212,7 @@ export default function Home() {
               </p>
             </div>
             <div className="w-full md:w-1/2 h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden border-2 border-white/5 order-1 md:order-2 bg-emerald-900/20 flex items-end justify-center relative">
-              <Image src="/mobilpenuhpaket.jpg" alt="Sukses" width={400} height={500} className="w-auto h-[90%] object-contain relative z-10 drop-shadow-2xl" />
+              <Image src="mobilpenuhpaket.jpg" alt="Sukses" width={400} height={500} className="w-auto h-[90%] object-contain relative z-10 drop-shadow-2xl" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
             </div>
           </div>
