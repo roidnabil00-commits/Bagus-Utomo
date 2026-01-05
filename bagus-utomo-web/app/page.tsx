@@ -325,7 +325,7 @@ export default function Home() {
             <div className="bg-[#0A0A0A] border border-[#1A1A1A] aspect-[9/16] relative group cursor-pointer rounded-[32px] overflow-hidden transition-all duration-500 hover:border-emerald-500/50">
                 <a href="https://www.instagram.com/p/DL9-EVxhCAB/" target="_blank" className="block h-full w-full">
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
-                    <Image src="/bagus keluarga.png" alt="Inspirasi 4" fill className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition duration-500" />
+                    <Image src="/baguskeluarga.png" alt="Inspirasi 4" fill className="w-full h-full object-cover object-center opacity-80 group-hover:opacity-100 transition duration-500" />
                     <div className="absolute bottom-0 left-0 p-6 md:p-8 z-20">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-4 group-hover:bg-emerald-500 transition duration-500">
                             <Instagram className="text-white w-5 h-5 md:w-6 md:h-6" />
